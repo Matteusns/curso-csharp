@@ -1,22 +1,12 @@
 ﻿using bytebank.Contas;
 using bytebank.Titular;
 
-Cliente cliente = new Cliente();
+ContaCorrente conta = new ContaCorrente(18, "1010-X");
+conta.Saldo = 500;
+conta.Titular = new Cliente();
 
-cliente.nome = "Andrá Silva";
-cliente.cpf = "123456789";
-cliente.profissao = "Analista";
+ContaCorrente conta2 = new ContaCorrente(18, "1234-X");
+Console.WriteLine(ContaCorrente.TotalDeContasCriadas);
 
-
-ContaCorrente conta = new ContaCorrente();
-conta.numero_agencia = 15;
-conta.titular = cliente;
-conta.conta = "1010-X";
-conta.saldo = 100;
-
-Console.WriteLine("Titular = " + conta.titular.nome);
-Console.WriteLine("CPF = " + conta.titular.cpf);
-Console.WriteLine("Profissao = " + conta.titular.profissao);
-Console.WriteLine("Nº da conta = " + conta.conta);
-Console.WriteLine("Agencia = " + conta.numero_agencia);
-Console.WriteLine("Saldo = " + conta.saldo);
+ContaCorrente conta3 = new ContaCorrente(18, "1525-Z");
+Console.WriteLine(ContaCorrente.TotalDeContasCriadas);
